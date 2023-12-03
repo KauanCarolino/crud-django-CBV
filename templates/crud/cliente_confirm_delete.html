@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apagar Cliente</title>
+</head>
+<body>
+    <p>Tem certeza que deseja apagar o cliente: '{{ cliente.nome }}'</p>
+    <form action="." method="POST">
+        {% csrf_token %}
+
+        <input type="submit" value="Sim, tenho certeza!">
+        <input type="reset" value="Cancelar" onclick="location.href='{% url "crud:list" %}'">
+
+    </form>
+</body>
+</html>
